@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiss Cam - Arraiá</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📸 Kiss Cam - Arraiá Junino 💋</h1>
+    <p>Clique nas fotos para ver em tamanho maior e baixar!</p>
+  </header>
+
+  <main>
+    <div class="gallery" id="gallery">
+      <!-- Fotos serão carregadas aqui -->
+    </div>
+  </main>
+
+  <footer>
+    <p>Arraiá 2025 - Feito com ❤️ e pamonha</p>
+  </footer>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+
+    // Lista de fotos que você colocar na pasta /fotos
+    const photoList = [
+      "foto1.jpg",
+      "foto2.jpg",
+      "foto3.jpg",
+      "foto4.jpg"
+      // Adicione os nomes exatos das imagens aqui
+    ];
+
+    photoList.forEach((photo) => {
+      const container = document.createElement("div");
+      container.className = "photo-card";
+
+      const img = document.createElement("img");
+      img.src = `fotos/${photo}`;
+      img.alt = "Kiss Cam";
+      img.loading = "lazy";
+
+      const downloadBtn = document.createElement("a");
+      downloadBtn.href = img.src;
+      downloadBtn.download = photo;
+      downloadBtn.innerText = "Baixar";
+
+      container.appendC
